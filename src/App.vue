@@ -292,7 +292,10 @@ margin: 12px;
 @media only screen and (max-width: 1200px) {
 
 .gquestion1 {
-  margin:2px;
+  margin-right:1%;
+  margin-left:2%;
+  display:flex;
+  align-items: center;
 }
   
 .mailmessage {
@@ -378,8 +381,9 @@ color:rgb(59, 59, 59)
 
 @media only screen and (max-width: 800px) {
 .gquestion1 {
-  margin:0px !important;
-  padding:0px;
+  padding:2px;
+   height:14px;
+  width: 14px;
 }
 
 .mailsenderbar {display:block !important;
@@ -389,10 +393,7 @@ text-align: center;
 
 }
 
-.gquestion1 {
-  height:14px;
-  width: 14px;
-}
+
 
 .replyflex {
     display:flex;
@@ -507,6 +508,10 @@ height: 18px !important;
 .gsidein2 {
  display:flex;
 height: 80px !important;
+}
+
+.abc {
+  display:none;
 }
 
 .gsidemenu {

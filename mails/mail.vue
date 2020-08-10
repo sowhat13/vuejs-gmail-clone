@@ -2,7 +2,7 @@
   <div class="ginsideblock">
     <div class="ginsidenav p-2">
       <div class="my-auto mailtabicons">
-        <router-link to="." class="gquestion1 mr-4">
+        <router-link to="." class="gquestion1 mr-2">
           <i class="fas fa-arrow-left gquestionicon"></i>
         </router-link>
 
@@ -16,7 +16,7 @@
         <div class="gquestion1">
           <i class="fas fa-trash gquestionicon"></i>
         </div>
-        <div class="my-auto mx-3">|</div>
+        <div class="my-auto mx-2 abc">|</div>
 
         <div class="gquestion1">
           <i class="fas fa-envelope-open gquestionicon"></i>
@@ -28,7 +28,7 @@
         <div class="gquestion1">
           <i class="fas fa-check-circle gquestionicon"></i>
         </div>
-        <div class="my-auto mx-3">|</div>
+        <div class="my-auto mx-2 abc">|</div>
         <div class="gquestion1">
           <i class="fas fa-file-import gquestionicon"></i>
         </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
 
-      <span class="ml-auto my-auto">1-50 of {{count}}</span>
+      <span class="ml-auto my-auto ">1-50 of {{count}}</span>
 
       <div class="gquestion1 icongray">
         <i class="fas fa-chevron-left m-auto gquestionicon"></i>
@@ -52,7 +52,7 @@
 
       <div class="gquestion1 icongray">
         <i class="fas fa-keyboard m-auto gquestionicon"></i>
-        <i class="fas fa-sort-down giconsmall"></i>
+        <i class="fas fa-sort-down ml-1 giconsmall"></i>
       </div>
     </div>
     <div class="mailheight">
@@ -261,6 +261,8 @@ export default {};
   display: flex;
   object-fit: cover;
 }
+
+.mailsenderimagebar{display:flex;}
 
 .mailsendermaddress {
   color: gray;
