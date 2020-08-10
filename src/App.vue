@@ -290,6 +290,11 @@ margin: 12px;
 
 
 @media only screen and (max-width: 1200px) {
+
+.gquestion1 {
+  margin:2px;
+}
+  
 .mailmessage {
 overflow:hidden;
 width:60vh !important;
@@ -372,9 +377,45 @@ color:rgb(59, 59, 59)
 }
 
 @media only screen and (max-width: 800px) {
+.gquestion1 {
+  margin:0px !important;
+  padding:0px;
+}
+
+.mailsenderbar {display:block !important;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+}
+
+.gquestion1 {
+  height:14px;
+  width: 14px;
+}
+
+.replyflex {
+    display:flex;
+    margin-left:30px !important;
+}
+
+.mailmessagee {
+  padding-right: 30px !important;
+margin-left: 30px !important;
+}
+
+.mailsenderimagebar {
+  display:flex !important;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-left:auto;
+margin-right:auto;
+}
 
 .mailsender {width:80px !important;
 margin-left: 5px  !important;
+
 }
 
 .navbar-brand {

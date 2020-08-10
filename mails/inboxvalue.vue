@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="themail">
   <router-link to="/mails/inbox/mail" class="mail"> 
 
           <i class="far fa-square gsmicon2 ml-3"></i>

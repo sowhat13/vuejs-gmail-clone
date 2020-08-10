@@ -75,10 +75,11 @@
     </div>
 
     <div class="mailsenderbar">
+        <div  class="mailsenderimagebar">
       <img
         class="mailsenderimage"
         src="https://static.billboard.com/files/media/kendrick-lamar-mtv-vmas-2017-ax-billboard-1548-1024x677.jpg"
-      />
+      /> </div>
 <div class="nametor">
      <div> Kendrick Lamar</div>
           <div class="mailsendermaddress my-auto ">
@@ -88,9 +89,10 @@
       </div>
     </div>
       </div>
-      <div class="mailsendermaddress my-auto ml-2">&lt;originalgangsta@fromcompton.com&gt;</div>
+      <div class="mailsendermaddress my-auto ml-2 mr-1">&lt;originalgangsta@fromcompton.com&gt;</div>
 
       <div class="mailsendermaddress my-auto ml-auto">March 30, 2017, 4:24 PM</div>
+    <div class="mailsenderimagebar">
       <div class="gquestion1 icongray">
         <i class="far fa-star m-auto gquestionicon"></i>
       </div>
@@ -99,7 +101,7 @@
       </div>
       <div class="gquestion1 mr-4 icongray">
         <i class="fas fa-ellipsis-v my-auto gquestionicon"></i>
-      </div>
+      </div> </div>
     </div>
 <div class="mailmessagee">
     Ayy, I remember syrup sandwiches and crime allowances
@@ -190,6 +192,19 @@ Bitch, sit down (Hol' up, hol' up, lil' bitch)
 Be humble (Lil' bitch, hol' up, bitch)
 Sit down (Hol' up, hol' up, hol' up, hol' up)
 </div>
+<div class="replyflex">
+<div class="replybutton">
+        <i class="fas fa-reply m-auto gquestionicon"></i>
+    
+     Reply</div>
+<div class="replybutton">
+        <i class="fas fa-forward m-auto gquestionicon"></i>
+    
+    Forward</div>
+
+
+</div>
+
 </div>
   </div>
 </template>
@@ -199,6 +214,20 @@ export default {};
 </script>
 
 <style>
+.replyflex {
+    display:flex;
+    margin-left:70px;
+}
+
+.replybutton {
+    cursor: pointer;
+    padding: 4px 20px;
+    border-radius: 5px;
+    border: 1px gray solid;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
 .mailtabicons {
   display: flex;
 }
@@ -228,6 +257,7 @@ export default {};
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  text-align: center;
   display: flex;
   object-fit: cover;
 }
