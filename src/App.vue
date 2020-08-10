@@ -161,9 +161,7 @@ align-items: center;
 
 
 .gnav{
-  justify-content: center;
-align-items: center;
-text-align: center;
+
 display: flex;
 padding: 3px 10px;
   background-color:white;
@@ -416,6 +414,18 @@ color:rgb(59, 59, 59)
   padding:2px;
    height:14px;
   width: 14px;
+
+}
+
+.gnav{
+  justify-content: center;
+align-items: center;
+text-align: center;
+display: flex;
+padding: 3px 10px;
+  background-color:white;
+  color: rgb(122, 119, 119);
+  border-bottom:0.5px solid rgb(236, 236, 236);
 }
 
 .mailsenderbar {display:block !important;
