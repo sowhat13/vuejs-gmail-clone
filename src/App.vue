@@ -2,8 +2,6 @@
   <div class="home-page">
 
   <div class="gnav ">
-     <div class="gg">
-       <div class="ggfl">
     <div class="g1 my-auto ">
 <div class="gbar  ">
   <div class="gbaricon">
@@ -29,7 +27,7 @@
      </label>
 </div>
 <div class="g3 ml-auto ">
-<div class="gquestion   ">
+<div class="gquestion ml-auto  ">
 <i class="far fa-question-circle gquestionicon"></i>
 </div>
 
@@ -45,7 +43,11 @@
 E
 </div>
 </div>
-  </div>
+
+
+
+
+ </div>
 <div class="g4 ">
     <label @focus="onFocus" @blur="onBlur"  for="gsearch" class="my-auto" :class="[isFocused ? 'gsearchlabelfocus' : 'gsearchlabel']">
      <button @focus="onFocus" @blur="onBlur" class="gbtn my-auto  mx-2"><i class="fas fa-search"></i></button>
@@ -58,11 +60,8 @@ E
 
  
      </label>
-</div>
  
  </div>
- </div>
-
 
    <transition name="router-anim" enter-active-class="animated flipInX" leave-active-class="animated flipInY">
  <gsidebar > </gsidebar>
@@ -120,16 +119,14 @@ padding-right:30px;
 display:inline-flex;
 
 }
-.ggfl {display:flex}
+.ggfl {display:flex;
+}
 
 .g3 {
   display: flex;
-  
 }
 
-.gg {display:block;
 
-}
 
 .g4 {display:none;
 justify-content: center;
@@ -416,6 +413,9 @@ color:rgb(59, 59, 59)
   width: 14px;
 
 }
+.g3 {
+    margin-left:auto !important;
+}
 
 .gnav{
   justify-content: center;
@@ -425,6 +425,11 @@ display: flex;
 padding: 3px 10px;
   background-color:white;
   color: rgb(122, 119, 119);
+  border-bottom:none
+}
+
+.g4 {
+  padding-bottom:10px;
   border-bottom:0.5px solid rgb(236, 236, 236);
 }
 
