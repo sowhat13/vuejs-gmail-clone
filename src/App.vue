@@ -1,7 +1,9 @@
 <template>
   <div class="home-page">
-   
+
   <div class="gnav ">
+     <div class="gg">
+       <div class="ggfl">
     <div class="g1 my-auto ">
 <div class="gbar  ">
   <div class="gbaricon">
@@ -39,12 +41,29 @@
 <i class="fas fa-th gquestionicon"></i>
 </div>
 
-<div class="gavatar ">
+<div class="gavatar my-auto">
 E
 </div>
 </div>
   </div>
+<div class="g4 ">
+    <label @focus="onFocus" @blur="onBlur"  for="gsearch" class="my-auto" :class="[isFocused ? 'gsearchlabelfocus' : 'gsearchlabel']">
+     <button @focus="onFocus" @blur="onBlur" class="gbtn my-auto  mx-2"><i class="fas fa-search"></i></button>
+      <!-- <input @focus="onFocus" @blur="onBlur" id="gsearch" class=" gsearch my-auto"  placeholder="Search mail" aria-label="Search"> -->
+       <input class=" gsearch my-auto " type="search"  @focus="onFocus" @blur="onBlur" id="gsearch"  placeholder="Search mail" aria-label="Search">
+     
+    
+    
+     <button @focus="onFocus" @blur="onBlur" class="gbtn my-auto ml-auto mr-2"><i class="fas fa-sort-down"></i></button>
+
  
+     </label>
+</div>
+ 
+ </div>
+ </div>
+
+
    <transition name="router-anim" enter-active-class="animated flipInX" leave-active-class="animated flipInY">
  <gsidebar > </gsidebar>
  
@@ -101,9 +120,20 @@ padding-right:30px;
 display:inline-flex;
 
 }
+.ggfl {display:flex}
 
 .g3 {
   display: flex;
+  
+}
+
+.gg {display:block;
+
+}
+
+.g4 {display:none;
+justify-content: center;
+align-items: center;
 }
 
 
@@ -131,7 +161,9 @@ align-items: center;
 
 
 .gnav{
-  
+  justify-content: center;
+align-items: center;
+text-align: center;
 display: flex;
 padding: 3px 10px;
   background-color:white;
@@ -460,6 +492,9 @@ height: 18px !important;
 }
 
 .g2{display:none !important;}
+
+
+.g4{display:flex !important;}
 
 .mailsender {
   width: 55px !important;
