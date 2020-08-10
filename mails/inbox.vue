@@ -1,6 +1,37 @@
 <template>
   <div>
     <div class="mailsblock">
+           <div class="ginsidenav p-2  ">
+       
+<div class="gquestion1 ">
+<i class="far fa-square m-auto gquestionicon"></i>
+<i class="fas fa-sort-down  giconsmall "></i>
+</div>
+
+<div class="gquestion1">
+<i class="fas fa-redo m-auto gquestionicon"></i>
+</div>
+
+<div class="gquestion1">
+<i class="fas fa-ellipsis-v m-auto gquestionicon"></i>
+</div>
+
+<span class="ml-auto my-auto"> 1-50 of {{count}}</span>
+
+<div class="gquestion1 ">
+<i class="fas fa-chevron-left m-auto gquestionicon"></i>
+</div>
+
+<div class="gquestion1">
+<i class="fas fa-chevron-right m-auto gquestionicon"></i>
+</div>
+
+<div class="gquestion1  ">
+<i class="fas fa-keyboard m-auto gquestionicon"></i>
+<i class="fas fa-sort-down  giconsmall "></i>
+</div>
+        
+        </div>
       <div class="mailstabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item mailsprimary">
@@ -47,71 +78,17 @@
         </ul>
       </div>
 
-      <div class="tab-content" id="myTabContent">
+      <div class="tab-content mailsinterface" id="myTabContent">
         <div
           class="tab-pane fade show active"
           id="primary"
           role="tabpanel"
           aria-labelledby="primary-tab"
         >
-        <router-link to="mails/inbox" class="mail"> 
+      
 
-          <i class="far fa-square gsmicon2 ml-3"></i>
-          <i class="far fa-star gsmicon2"></i>
-       <i class="fas fa-exclamation-circle gsmicon2"></i>
-<div class="mailsender">
-Kendrick Lamar
-</div>
-<div class="mailtitle">Humble -</div>
-
-<div class="mailmessage my-auto">
-Nobody pray for me
-Even a day for me
-Way (yeah, yeah!)
-Ay, I remember syrup sandwiches and crime allowances
-Finesse a nigga with some counterfeits
-But now I'm countin' this
-Parmesan where my accountant lives
-In fact, I'm downin' this
-
-</div>
-<div class="ml-auto mx-3 mailclock">4:24 PM</div>
-<div class="ml-auto mailicons">
-<i class="fas fa-archive gsmicon"></i>
-<i class="fas fa-trash gsmicon"></i>
-<i class="fas fa-envelope-open gsmicon"></i>
-<i class="fas fa-clock gsmicon"></i></div>
-        </router-link>
-
-                <router-link to="mails/inbox" class="mail"> 
-
-          <i class="far fa-square gsmicon2 ml-3"></i>
-          <i class="far fa-star gsmicon2"></i>
-       <i class="fas fa-exclamation-circle gsmicon2"></i>
-<div class="mailsender">
-Kendrick Lamar
-</div>
-<div class="mailtitle">Humble -</div>
-
-<div class="mailmessage my-auto">
-Nobody pray for me
-Even a day for me
-Way (yeah, yeah!)
-Ay, I remember syrup sandwiches and crime allowances
-Finesse a nigga with some counterfeits
-But now I'm countin' this
-Parmesan where my accountant lives
-In fact, I'm downin' this
-
-</div>
-<div class="ml-auto mx-3 mailclock">4:24 PM</div>
-<div class="ml-auto mailicons">
-<i class="fas fa-archive gsmicon"></i>
-<i class="fas fa-trash gsmicon"></i>
-<i class="fas fa-envelope-open gsmicon"></i>
-<i class="fas fa-clock gsmicon"></i></div>
-        </router-link>
-        
+    
+        <inboxvalue v-for="i in count" :key="i"/> 
         
         
         
@@ -129,7 +106,17 @@ In fact, I'm downin' this
 </template>
 
 <script>
-export default {};
+import inboxvalue  from "./inboxvalue"
+export default {
+components: {
+    inboxvalue
+},
+computed: {
+count(){
+    return this.$store.getters.getCount
+}
+}
+};
 </script>
 
 <style lang="scss">
@@ -210,12 +197,17 @@ export default {};
   background-color: #f2f2f2;
   color: black;
 }
+.mailsinterface {
+    height: 70vh;
+    overflow-y: auto;
+}
 
 
 .mail {
     display: flex;
     height: 40px;
     align-items: center;
+
       border-bottom: 0.5px solid rgb(236, 236, 236);
 
 
@@ -223,6 +215,7 @@ export default {};
     margin-left: 8px;
     margin-right:8px;
     color: rgb(228, 228, 228);
+    cursor:pointer;
 }
 
 .mailsender {
@@ -239,7 +232,7 @@ color:rgb(59, 59, 59)
 
 .mailmessage {
 overflow:hidden;
-width:600px;
+width:100vh;
 display: flex;
 height: 24px;
 
@@ -247,6 +240,7 @@ height: 24px;
 
 
 .mailicons {
+  
     display: none;
 }
 
@@ -259,7 +253,7 @@ height: 24px;
      -webkit-box-shadow: 0px 5px 5px -4px rgba(0,0,0,0.15);
 -moz-box-shadow: 0px 5px 5px -4px rgba(0,0,0,0.15);
 box-shadow: 0px 5px 5px -4px rgba(0,0,0,0.15);
-
+ 
 
 .gsmicon2 {
     margin-left: 8px;
@@ -281,7 +275,7 @@ color:rgb(59, 59, 59)
 
 .mailmessage {
 overflow:hidden;
-width:600px;
+width:69vh;
 display: flex;
 height: 24px;
 
@@ -292,12 +286,14 @@ height: 24px;
 }
 
 .mailicons {
-    position:absolute;
-    z-index: 5;
+
     display: flex;
-    right: 20px;
+width: 30vh;
     background-color: white;
+    padding-left: 5px;
 }
 
 }
+
+
 </style>

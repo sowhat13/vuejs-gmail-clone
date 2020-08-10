@@ -10,6 +10,12 @@ const routes = [
         name: "InboxMessage",
         component: () => import ("../mails/inbox.vue")
     },
+    {
+        path: '/mails/inbox/mail',
+        name: 'mapmail',
+        component: () => import ("../mails/mail.vue")
+      },
+
 {
     path: "/mails/starred",
     name: "StarredMessage",

@@ -54,7 +54,7 @@
 
             >
               <i class="fas fa-inbox gsmicon"></i>Inbox 
-              <span class="ml-auto my-auto messagecount">12</span>
+              <span class="ml-auto my-auto messagecount">{{count}}</span>
             </router-link>
             <router-link
               class="nav-link"
@@ -88,37 +88,7 @@
         </div>
       </div>
       <div class="ginsideblock">
-        <div class="ginsidenav p-2  ">
-       
-<div class="gquestion1 ">
-<i class="far fa-square m-auto gquestionicon"></i>
-<i class="fas fa-sort-down  giconsmall "></i>
-</div>
-
-<div class="gquestion1">
-<i class="fas fa-redo m-auto gquestionicon"></i>
-</div>
-
-<div class="gquestion1">
-<i class="fas fa-ellipsis-v m-auto gquestionicon"></i>
-</div>
-
-<span class="ml-auto my-auto"> 1-50 of 12</span>
-
-<div class="gquestion1 ">
-<i class="fas fa-chevron-left m-auto gquestionicon"></i>
-</div>
-
-<div class="gquestion1">
-<i class="fas fa-chevron-right m-auto gquestionicon"></i>
-</div>
-
-<div class="gquestion1  ">
-<i class="fas fa-keyboard m-auto gquestionicon"></i>
-<i class="fas fa-sort-down  giconsmall "></i>
-</div>
-        
-        </div>
+     
      <router-view>
 
      </router-view>
@@ -128,7 +98,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+  computed: {
+count(){
+    return this.$store.getters.getCount
+}}
+};
 </script>
 
 <style lang="scss">
@@ -222,7 +198,7 @@ export default {};
 margin:auto;
   margin-right: 18px;
   margin-left: 6px;
-
+ cursor:pointer;
 }
 
 .messagecount {
@@ -252,10 +228,12 @@ margin:auto;
   height: 36px;
 font-size: 16px;
 text-align: center;
+align-items: center;
+justify-content: center;
 padding: 2px;
 margin-left:5px ;
 margin-right:5px;
-
+cursor:pointer;
 margin-top: auto;
 margin-bottom: auto;
 border-radius: 50%;
@@ -268,7 +246,7 @@ border-radius: 50%;
 }
 
 .giconsmall {
-    margin-top: 8px;
+   
     font-size: 12px;
 }
 </style>
