@@ -7,9 +7,9 @@
   <i class="fas fa-bars  "></i>
   </div>
 </div>
-<a class="navbar-brand " href="#">
+<router-link class="navbar-brand " to="/mails/inbox">
     <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png"  alt="Gmail" loading="lazy">
-  </a>
+  </router-link>
     </div>
 
 <div class="g2">

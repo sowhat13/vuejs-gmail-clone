@@ -40,56 +40,50 @@
 
         <div class="gsidemenu">
           <div
-            class="nav flex-column nav-pills"
+            class="nav gsidemenumails flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
           >
-            <a
-              class="nav-link active"
-              id="v-pills-inbox-tab"
+            <router-link
+              class="nav-link "
+      
               data-toggle="pill"
-              href="#v-pills-inbox"
-              role="tab"
-              aria-controls="v-pills-inbox"
-              aria-selected="true"
+         to="/mails/inbox"
+        
+
             >
               <i class="fas fa-inbox gsmicon"></i>Inbox 
               <span class="ml-auto my-auto messagecount">12</span>
-            </a>
-            <a
+            </router-link>
+            <router-link
               class="nav-link"
-              id="v-pills-starred-tab"
+         
               data-toggle="pill"
-              href="#v-pills-starred"
-              role="tab"
-              aria-controls="v-pills-starred"
-              aria-selected="false"
+            to="/mails/starred"
+           
             >
               <i class="fas fa-star gsmicon"></i>Starred
-            </a>
-            <a
+            </router-link>
+            <router-link
               class="nav-link"
-              id="v-pills-snoozed-tab"
+     
               data-toggle="pill"
-              href="#v-pills-snoozed"
-              role="tab"
-              aria-controls="v-pills-snoozed"
-              aria-selected="false"
+            to="/mails/snoozed"
+          
             >
               <i class="fas fa-clock gsmicon"></i>Snoozed
-            </a>
-            <a
+            </router-link>
+            <router-link
               class="nav-link"
-              id="v-pills-important-tab"
+           
               data-toggle="pill"
-              href="#v-pills-important"
-              role="tab"
-              aria-controls="v-pills-important"
-              aria-selected="false"
+                to="/mails/important"
+            
+           
             >
               <i class="fas fa-exclamation-circle gsmicon"></i>Important
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -125,32 +119,9 @@
 </div>
         
         </div>
-        <div class="tab-content" id="v-pills-tabContent">
-          <div
-            class="tab-pane tps fade show active"
-            id="v-pills-inbox"
-            role="tabpanel"
-            aria-labelledby="v-pills-inbox-tab"
-          >...</div>
-          <div
-            class="tab-pane tps fade"
-            id="v-pills-starred"
-            role="tabpanel"
-            aria-labelledby="v-pills-starred-tab"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus totam sunt necessitatibus consectetur veritatis nesciunt, ab qui alias maxime veniam animi ea corrupti voluptas mollitia quidem ex quasi odit.</div>
-          <div
-            class="tab-pane tps fade"
-            id="v-pills-snoozed"
-            role="tabpanel"
-            aria-labelledby="v-pills-snoozed-tab"
-          >...</div>
-          <div
-            class="tab-pane tps fade"
-            id="v-pills-important"
-            role="tabpanel"
-            aria-labelledby="v-pills-important-tab"
-          >...</div>
-        </div>
+     <router-view>
+
+     </router-view>
       </div>
     </div>
   </div>
@@ -167,6 +138,11 @@ export default {};
   height: 100%;
   display: flex;
     color: rgb(122, 119, 119);
+
+    a {
+    color: rgb(122, 119, 119);
+    text-decoration: none;
+}
 }
 
 .gsidein {
@@ -216,7 +192,10 @@ export default {};
   padding: 10px 14px;
 }
 
-.nav-link {
+
+
+.gsidemenumails{
+  a {
   border-radius: 0px 25px 25px 0px !important;
   font-size: 15px !important;
   color: rgb(95, 95, 95) !important;
@@ -225,20 +204,19 @@ export default {};
   height: 32px;
   display: flex;
 }
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+
+ .router-link-active, a.active {
   color: #d93025 !important;
   background-color: #fce8e6 !important;
   font-weight: bold;
+}
 }
 
 .nav-link:hover {
   background-color: rgb(224, 224, 224);
 }
 
-.tab-content {
-  padding: 10px;
-}
+
 
 .gsmicon {
 margin:auto;
