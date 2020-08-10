@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gsidebar-page">
     <div class="gside">
       <div class="gsidein">
         <div class="gcompose">
@@ -9,7 +9,7 @@
               src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png"
             />
 
-            <span>Compose</span>
+            <span class="gsidetext">Compose</span>
           </div>
 
           <!-- Modal -->
@@ -43,7 +43,7 @@
             class="nav gsidemenumails flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
-            aria-orientation="vertical"
+         
           >
             <router-link
               class="nav-link "
@@ -53,8 +53,8 @@
         
 
             >
-              <i class="fas fa-inbox gsmicon"></i>Inbox 
-              <span class="ml-auto my-auto messagecount">{{count}}</span>
+              <i class="fas fa-inbox gsmicon"></i><span class="gsidetext">Inbox 
+              <span class=" my-auto messagecount">{{count}}</span> </span>
             </router-link>
             <router-link
               class="nav-link"
@@ -63,7 +63,7 @@
             to="/mails/starred"
            
             >
-              <i class="fas fa-star gsmicon"></i>Starred
+              <i class="fas fa-star gsmicon"></i><span class="gsidetext">Starred</span>
             </router-link>
             <router-link
               class="nav-link"
@@ -72,7 +72,7 @@
             to="/mails/snoozed"
           
             >
-              <i class="fas fa-clock gsmicon"></i>Snoozed
+              <i class="fas fa-clock gsmicon"></i><span class="gsidetext">Snoozed</span>
             </router-link>
             <router-link
               class="nav-link"
@@ -82,18 +82,107 @@
             
            
             >
-              <i class="fas fa-exclamation-circle gsmicon"></i>Important
+              <i class="fas fa-exclamation-circle gsmicon"></i><span class="gsidetext">Important</span>
             </router-link>
           </div>
         </div>
       </div>
       <div class="ginsideblock">
-     
-     <router-view>
+    
+      <div class="gsidein2">
+        <div class="gcompose">
+          <div class="gcomposebtn" data-toggle="modal" data-target="#exampleModal">
+            <img
+              class="gcomposeimg"
+              src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png"
+            />
 
-     </router-view>
+            <span class="gsidetext">Compose</span>
+          </div>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gsidemenu">
+          <div
+            class=" gsidemenumails2  nav-pills"
+            id="v-pills-tab"
+         
+          >
+            <router-link
+              class="nav-link "
+      
+              data-toggle="pill"
+         to="/mails/inbox"
+        
+
+            >
+              <i class="fas fa-inbox gsmicon"></i><span class="gsidetext">Inbox 
+              <span class=" my-auto messagecount">{{count}}</span> </span>
+            </router-link>
+            <router-link
+              class="nav-link"
+         
+              data-toggle="pill"
+            to="/mails/starred"
+           
+            >
+              <i class="fas fa-star gsmicon"></i><span class="gsidetext">Starred</span>
+            </router-link>
+            <router-link
+              class="nav-link"
+     
+              data-toggle="pill"
+            to="/mails/snoozed"
+          
+            >
+              <i class="fas fa-clock gsmicon"></i><span class="gsidetext">Snoozed</span>
+            </router-link>
+            <router-link
+              class="nav-link"
+           
+              data-toggle="pill"
+                to="/mails/important"
+            
+           
+            >
+              <i class="fas fa-exclamation-circle gsmicon"></i><span class="gsidetext">Important</span>
+            </router-link>
+          </div>
+        </div>
+      </div>
+
+
+    <transition name="transitionanim" class="transitionanim">
+     <router-view />
+    </transition>
+
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -110,6 +199,41 @@ count(){
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+.transitionanim-enter-active {
+  animation: coming .8s;
+  animation-delay:.3s;
+
+  opacity:0;
+}
+
+.transitionanim-leave-active {
+  animation:going .2s;
+ 
+
+
+}
+
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes coming {
+  from {
+    transform: translateX(-50px);
+     opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
 .gside {
   height: 100%;
   display: flex;
@@ -124,6 +248,8 @@ count(){
 .gsidein {
   max-width: 256px;
 }
+
+
 
 .gcompose {
   margin: 16px 8px;
@@ -149,8 +275,6 @@ count(){
   display: -webkit-inline-flex;
   display: inline-flex;
   font-weight: 500;
-  height: 48px;
-  min-width: 56px;
   overflow: hidden;
   padding: 0 24px 0 0;
   text-transform: none;
@@ -188,6 +312,26 @@ count(){
 }
 }
 
+
+.gsidemenumails2{
+  display:none !important;
+  a {
+  border-radius: 25px !important;
+  font-size: 15px !important;
+  color: rgb(95, 95, 95) !important;
+  width: 95%;
+  padding: 5px 24px;
+  height: 32px;
+  display: flex;
+}
+
+ .router-link-active, a.active {
+  color: #d93025 !important;
+  background-color: #fce8e6 !important;
+  font-weight: bold;
+}
+}
+
 .nav-link:hover {
   background-color: rgb(224, 224, 224);
 }
@@ -203,6 +347,7 @@ margin:auto;
 
 .messagecount {
     font-size: 12px;
+    margin-left: 180%;
 }
 
 .gsidemenu {
@@ -248,5 +393,12 @@ border-radius: 50%;
 .giconsmall {
    
     font-size: 12px;
+}
+
+.gsidetext {
+  display:flex;
+}
+.gsidein2 {
+ display:none;
 }
 </style>

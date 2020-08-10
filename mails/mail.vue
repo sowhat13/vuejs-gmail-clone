@@ -249,6 +249,7 @@ color: rgb(56, 56, 56);
 font-size: 14px;
 margin-left: 70px;
 padding-right: 70px;
+margin-top: 10px;
 
 }
 .mailheight {

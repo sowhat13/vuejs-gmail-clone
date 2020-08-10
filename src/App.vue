@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="home-page">
+   
   <div class="gnav ">
     <div class="g1 my-auto ">
 <div class="gbar  ">
@@ -7,8 +8,8 @@
   <i class="fas fa-bars  "></i>
   </div>
 </div>
-<router-link class="navbar-brand " to="/mails/inbox">
-    <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png"  alt="Gmail" loading="lazy">
+<router-link class="navbar-brand " to="/">
+    <img class="navbar-brand-img" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png"  alt="Gmail" loading="lazy">
   </router-link>
     </div>
 
@@ -44,20 +45,20 @@ E
 </div>
   </div>
  
- 
- <gsidebar />
+   <transition name="router-anim" enter-active-class="animated flipInX" leave-active-class="animated flipInY">
+ <gsidebar > </gsidebar>
  
 
-
+     </transition>
   </div>
 </template>
 
 <script>
 import gsidebar from "./components/gsidebar"
+
 export default {
 components: {
   gsidebar,
-
 },
 
 data() {
@@ -84,6 +85,9 @@ methods: {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 
 .g1 {
 min-width: 238px;
@@ -146,7 +150,7 @@ padding: 3px 10px;
   box-shadow:none !important;
   background-color:#F1F3F4;
   border-radius:6px  !important;
-
+overflow: hidden;
     font-style: normal;
     font-variant-ligatures: none;
     font-variant-caps: normal;
@@ -181,7 +185,7 @@ padding: 3px 10px;
     font-size: 16px;
     line-height: normal;
     font-family:  'Roboto',  Helvetica, Arial, sans-serif;
-
+overflow: hidden;
   background-color:white;
   box-shadow:rgb(212, 211, 211) 0px 0px 3px 1px;
 }
@@ -193,7 +197,7 @@ padding: 3px 10px;
   border:none;
 background:none;
 outline:none;
-
+overflow: hidden;
 
 }
 
@@ -249,7 +253,7 @@ right:6%;
 .gquestion{
   width:36px;
   height: 36px;
-font-size: 20px;
+font-size: 22px;
 text-align: center;
 padding: 2px;
 margin-left:2px ;
@@ -282,6 +286,264 @@ margin: 12px;
 
 .gavatar:hover {
   box-shadow: 0px 0px 6px 3px #c5bcbc;
+}
+
+
+@media only screen and (max-width: 1200px) {
+.mailmessage {
+overflow:hidden;
+width:60vh !important;
+display: flex;
+height: 24px;
+
+}
+
+.mailmessage:hover {
+overflow:hidden;
+width:40vh !important;
+display: flex;
+height: 24px;
+
+}
+
+.mailicons {
+
+    display: flex;
+width: 15vh !important;
+    background-color: white;
+    padding-left: 5px;
+
+    margin-right:60px
+}
+
+ .mailsprimarylink {
+    width: 151px !important;}
+ .mailssociallink {
+    width: 151px !important;}
+     .mailspromotionslink {
+    width: 151px !important;}
+.mailicons {
+
+width: 20vh !important;
+    background-color: white;
+    padding-left: 5px;
+}
+
+.mailsender {
+margin-left: 12px !important;
+width: 150px !important;
+color:rgb(59, 59, 59)
+}
+
+.gsearchlabel { width:500px !important
+}
+
+.gsearchlabelfocus { width:500px !important
+}
+}
+
+@media only screen and (max-width: 969px) {
+.gsearchlabel {width: 300px !important;}
+
+.gsearchlabelfocus {width: 300px !important;}
+
+.gsidetext {
+  display:none !important; 
+}
+
+.nav-link{width: 75px !important;}
+.gsidemenu {
+  height: 150px !important;
+  overflow: auto;
+  width: 86px !important;
+}
+
+.gcomposebtn {
+  padding: 0px !important;
+}
+.mailicons {margin-right:100px;}
+
+
+
+}
+@media only screen and (max-width: 815px) {
+
+.mailicons {display:none !important;}
+}
+
+@media only screen and (max-width: 800px) {
+
+.mailsender {width:80px !important;
+margin-left: 5px  !important;
+}
+
+.navbar-brand {
+    width: 50px !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    padding-top: .3125rem ;
+    padding-bottom: .3125rem;
+     margin-right: 0rem !important;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navbar-brand-img {
+   width: 50px !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    padding-top: .3125rem ;
+    padding-bottom: .3125rem;
+     margin-right: 0rem !important;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.g1 {
+min-width: 138px;
+  display:flex;
+  padding-right: 5px;
+}
+
+.mail {font-size: 12px !important; }
+
+.mailmessage {
+overflow:hidden;
+width:30vh !important;
+display: flex;
+height: 18px !important;
+
+}
+
+.g2{display:none !important;}
+
+.mailsender {
+  width: 55px !important;
+  font-weight: bold;
+  height: 18px !important;
+}
+
+.mailtitle {
+  width: 55px !important;
+  height: 18px !important;
+}
+
+ .mailsprimarylink {
+    width: 70px !important;
+    justify-content: center;
+    font-size: 10px;
+    }
+ .mailssociallink {
+    width: 70px !important;
+     justify-content: center;
+    font-size: 10px;}
+     .mailspromotionslink {
+    width: 70px !important;
+     justify-content: center;
+    font-size: 10px;
+    
+    
+    }
+
+.ginsidenav {
+  font-size: 10px !important;
+}
+
+.gquestionicon {
+  font-size: 10px !important;
+}
+
+.gsmicon2 {
+  font-size: 10px !important;
+  margin: 0 4px !important;
+}
+}
+
+@media only screen and (max-width: 460px) {
+.gsidein {display:none !important}
+.gsidein2 {
+ display:flex;
+height: 80px !important;
+}
+
+.gsidemenu {
+  display:flex !important;
+  width: 500px !important;
+height: 80px !important;
+
+}
+
+.gsidemenumails2 {
+  display:flex !important;
+align-items: center;
+}
+.gcompose {
+align-items: center;
+display:flex;
+margin-top:auto;
+margin-bottom:auto;
+
+height: 50px;
+}
+
+
+.gcomposebtn {
+  cursor: pointer;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 50%;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #fff;
+  background-image: none;
+  -webkit-border-radius: 24px;
+  border-radius: 24px;
+  color: #3c4043;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-weight: 500;
+  overflow: hidden;
+  padding:0px !important;
+  text-transform: none;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  height: 48px;
+}
+
+.mailclock {display:none;}
+
+.gnav {align-items: center;}
+.gquestion {
+  width:14px;
+  height: 14px;
+font-size: 8px;
+padding: 2px;
+margin-left:2px ;
+margin-right:2px;
+cursor:pointer;
+margin-top: auto;
+margin-bottom: auto;
+border-radius: 50%;
+}
+.gquestion1 {
+  height: 14px;
+  width:14px;
+}
+
+.gavatar {
+    height: 14px;
+  width:14px;
+  margin:0px;
+  font-size:6px;
+align-items:center;
+padding:3px;
+}
 }
 
 </style>

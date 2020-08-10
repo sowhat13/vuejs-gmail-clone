@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="inbox-page">
     <div class="mailsblock">
            <div class="ginsidenav p-2  ">
        
-<div class="gquestion1 ">
+<div class="gquestion1  " >
 <i class="far fa-square m-auto gquestionicon"></i>
 <i class="fas fa-sort-down  giconsmall "></i>
 </div>
@@ -44,7 +44,7 @@
               aria-controls="primary"
               aria-selected="true"
             >
-              <i class="fas fa-inbox mx-3"></i>
+              <i class="fas fa-inbox iconmargin"></i>
               <span>Primary</span>
             </a>
           </li>
@@ -58,7 +58,7 @@
               aria-controls="social"
               aria-selected="false"
             >
-              <i class="fas fa-user-friends mx-3"></i>
+              <i class="fas fa-user-friends iconmargin "></i>
               <span>Social</span>
             </a>
           </li>
@@ -72,7 +72,7 @@
               aria-controls="promotions"
               aria-selected="false"
             >
-              <i class="fas fa-tag mx-3"></i>Promotions
+              <i class="fas fa-tag iconmargin"></i>Promotions
             </a>
           </li>
         </ul>
@@ -221,18 +221,22 @@ count(){
 .mailsender {
 margin-left: 15px;
 width: 200px;
-color:rgb(59, 59, 59)
+color:rgb(59, 59, 59);
+overflow:hidden;
+height: 24px;
 }
 
 .mailtitle{
 display: flex;
-
+overflow: hidden;
+width:12vh;
+height: 24px;
 color:rgb(59, 59, 59) 
 }
 
 .mailmessage {
 overflow:hidden;
-width:100vh;
+width:70vh;
 display: flex;
 height: 24px;
 
@@ -295,5 +299,7 @@ width: 30vh;
 
 }
 
+.iconmargin {margin-left: 5%;
+margin-right: 5%;}
 
 </style>
